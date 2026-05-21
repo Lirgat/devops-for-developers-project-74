@@ -5,6 +5,27 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./app:/app
-    command: make dev
     environment:
       - NODE_ENV=development
+      - SKIP_MIGRATIONS=true
+    expose:
+      - "8080"
+    command: sh -c "npm run start"
+
+  caddy:
+    image: caddy:alpine
+    container_name: caddy-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:

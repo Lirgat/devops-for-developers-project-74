@@ -1,0 +1,21 @@
+localhost {
+  log {
+    format json
+    level INFO
+  }
+
+  encode gzip zstd
+  tls internal
+
+  # Здоровье проверка для app
+  handle /health {
+    respond "OK" 200
+  }
+
+  # Проксирование с повторными попытками
+  reverse_proxy /* app:8080 {
+    health_uri /health
+    health_interval 10s
+    health_timeout 3s
+  }
+}

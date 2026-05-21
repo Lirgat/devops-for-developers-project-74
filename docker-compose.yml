@@ -4,7 +4,25 @@ services:
       context: .
       dockerfile: Dockerfile.production
     image: lirgat/devops-for-developers-project-74:latest
-    ports:
-      - "8080:8080"
     environment:
       - NODE_ENV=production
+    # Порт 8080 не публикуем наружу, только внутри сети Docker
+    expose:
+      - "8080"
+
+  caddy:
+    image: caddy:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
