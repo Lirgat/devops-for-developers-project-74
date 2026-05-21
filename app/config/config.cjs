@@ -1,28 +1,35 @@
-require('dotenv').config();
-
 module.exports = {
   development: {
-    dialect: 'sqlite',
-    storage: './database.sqlite',
-  },
-  production: {
+    username: process.env.DATABASE_USERNAME || 'postgres',
+    password: process.env.DATABASE_PASSWORD || 'password',
+    database: process.env.DATABASE_NAME || 'postgres',
+    host: process.env.DATABASE_HOST || 'localhost',
+    port: process.env.DATABASE_PORT || 5432,
     dialect: 'postgres',
-    database: process.env.DATABASE_NAME,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD,
-    port: process.env.DATABASE_PORT,
-    host: process.env.DATABASE_HOST,
+    logging: false,
   },
   test: {
-    dialect: 'sqlite',
-    storage: './database.test.sqlite',
+    username: process.env.DATABASE_USERNAME || 'postgres',
+    password: process.env.DATABASE_PASSWORD || 'password',
+    database: process.env.DATABASE_NAME || 'postgres_test',
+    host: process.env.DATABASE_HOST || 'localhost',
+    port: process.env.DATABASE_PORT || 5432,
+    dialect: 'postgres',
+    logging: false,
   },
-  // test: {
-  //   dialect: 'postgres',
-  //   database: process.env.DATABASE_NAME,
-  //   username: process.env.DATABASE_USERNAME,
-  //   password: process.env.DATABASE_PASSWORD,
-  //   port: process.env.DATABASE_PORT,
-  //   host: process.env.DATABASE_HOST,
-  // },
+  production: {
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME,
+    host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT || 5432,
+    dialect: 'postgres',
+    logging: false,
+    pool: {
+      max: 10,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+  },
 };
