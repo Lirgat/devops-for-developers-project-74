@@ -1,0 +1,27 @@
+FROM node:20.12.2
+
+WORKDIR /app
+
+# Копируем всё приложение
+COPY app/package*.json ./
+
+# Чистая установка без проблемных скриптов
+RUN npm install --no-optional --ignore-scripts
+
+# Копируем всё приложение
+COPY app/. .
+
+# Устанавливаем sequelize-cli глобально и локально
+RUN npm install -g sequelize-cli && \
+    npm install sequelize-cli --no-save --no-optional --ignore-scripts
+
+# Создаем символические ссылки
+RUN ln -sf /usr/local/bin/sequelize node_modules/.bin/sequelize
+
+# Проверяем установку
+RUN which sequelize && sequelize --version || echo "Sequelize CLI installed"
+
+EXPOSE 8080
+ENV NODE_ENV=production
+
+CMD ["npm", "run", "start"]

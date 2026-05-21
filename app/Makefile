@@ -1,16 +1,19 @@
 setup:
-	npm install --ignore-scripts
+	npm install --ignore-scripts --no-optional
 
-test:
-	npm test
+migrate:
+	npx sequelize db:migrate
+
+start:
+	npm run start
 
 dev:
 	npm run dev
 
-start-frontend:
-	npm run start-frontend
+build:
+	npm run build
 
-start-backend:
-	npm run start-backend
+test:
+	npm test
 
-.PHONY: setup test dev start-frontend start-backend
+.PHONY: setup migrate start dev build test
