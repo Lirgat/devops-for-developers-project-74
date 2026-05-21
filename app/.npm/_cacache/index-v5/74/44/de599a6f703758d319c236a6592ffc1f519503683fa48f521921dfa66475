@@ -1,0 +1,3 @@
+
+
+597c4d9916ad46b40d1eda69802bfe06ba1465d9	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/mime/-/mime-3.0.0.tgz","integrity":"sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==","time":1779347586134,"size":18690,"metadata":{"time":1779347584550,"url":"https://registry.npmjs.org/mime/-/mime-3.0.0.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Thu, 21 May 2026 07:13:06 GMT","etag":"\"8e9e834a44e0445b20a0a91ec4a32e01\"","last-modified":"Wed, 03 Nov 2021 00:50:49 GMT","vary":"Accept-Encoding"},"options":{"compress":true}}}

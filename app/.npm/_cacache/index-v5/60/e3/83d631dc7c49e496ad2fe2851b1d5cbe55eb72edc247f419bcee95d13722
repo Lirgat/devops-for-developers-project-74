@@ -1,0 +1,3 @@
+
+
+0746209e58e255fb8d4f2793291539c6c75f835e	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.3.tgz","integrity":"sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg==","time":1779347590629,"size":1684364,"metadata":{"time":1779347585087,"url":"https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.3.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Thu, 21 May 2026 07:13:06 GMT","etag":"\"19f9db92c6dcded1c368106b91eb2e11\"","last-modified":"Tue, 20 Feb 2024 15:21:23 GMT","vary":"Accept-Encoding"},"options":{"compress":true}}}

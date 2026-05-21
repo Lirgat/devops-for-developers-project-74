@@ -1,0 +1,3 @@
+
+
+455cd2fd869762d51f49c170cb59a5eceb5a2f25	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/minipass-fetch/-/minipass-fetch-3.0.4.tgz","integrity":"sha512-jHAqnA728uUpIaFm7NWsCnqKT6UqZz7GcI/bDpPATuwYyKwJwW0remxSCxUlKiEty+eopHGa3oc8WxgQ1FFJqg==","time":1779347586033,"size":13535,"metadata":{"time":1779347584984,"url":"https://registry.npmjs.org/minipass-fetch/-/minipass-fetch-3.0.4.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Thu, 21 May 2026 07:13:06 GMT","etag":"\"fbf7c7dc70631f290e6a47c6a27b9c91\"","last-modified":"Mon, 14 Aug 2023 18:58:57 GMT","vary":"Accept-Encoding"},"options":{"compress":true}}}
